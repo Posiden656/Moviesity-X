@@ -170,11 +170,11 @@ async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
         broadcast_msg = message.reply_to_message
-        🌟Tᴏᴛᴀʟ = 0
-        ✅Sᴜᴄᴄᴇssғᴜʟ = 0
-        👾Bʟᴏᴄᴋᴇᴅ = 0
-        💀Dᴇʟᴇᴛᴇᴅ = 0
-        ❌Uɴsᴜᴄᴄᴇssғᴜʟ = 0
+        total = 0
+        successful = 0
+        blocked = 0
+        deleted = 0
+        unsuccessful = 0
         
         pls_wait = await message.reply("<i>Bʀᴏᴀᴅᴄᴀsᴛɪɴɢ Mᴇssᴀɢᴇ... Tʜɪs Wɪʟʟ Tᴀᴋᴇ Sᴏᴍᴇ Tɪᴍᴇ</i>")
         for chat_id in query:
