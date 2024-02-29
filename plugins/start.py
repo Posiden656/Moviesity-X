@@ -83,7 +83,7 @@ async def start_command(client: Client, message: Message):
             disable_web_page_preview=True,
             quote=True
         )
-                await asyncio.sleep(60)
+                await asyncio.sleep(300)
                 await xfile.delete()
                 await xmsg.edit("⦸ <i>This message was deleted</i>")
             except FloodWait as e:
