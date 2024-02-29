@@ -23,7 +23,7 @@
     },
     "DATABASE_URL": {
       "description": "Paste your mongo db url",
-      "value": "url"
+      "value": "mongodb+srv://moviesityone:Abcd12344@cluster0.cchth7a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     },
     "DATABASE_NAME":{
       "description": "Enter your DATABASE_NAME ",
