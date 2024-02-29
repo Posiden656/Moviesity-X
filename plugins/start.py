@@ -55,11 +55,11 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please wait...")
+        temp_msg = await message.reply("<b>Pʟᴇᴀsᴇ Wᴀɪᴛ...</b>")
         try:
             messages = await get_messages(client, ids)
         except:
-            await message.reply_text("Something went wrong..!")
+            await message.reply_text("Sᴏᴍᴇᴛʜɪɴɢ Wᴇɴᴛ Wʀᴏɴɢ..!")
             return
         await temp_msg.delete()
 
@@ -96,8 +96,7 @@ async def start_command(client: Client, message: Message):
         reply_markup = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("😊 About Me", callback_data = "about"),
-                    InlineKeyboardButton("🔒 Close", callback_data = "close")
+                    InlineKeyboardButton("🍿 Jᴏɪɴ Mᴀɪɴ Cʜᴀɴɴᴇʟ 🍿", url="https://t.me/MOVIESITY")
                 ]
             ]
         )
@@ -118,7 +117,7 @@ async def start_command(client: Client, message: Message):
     
 #=====================================================================================##
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """"<b>Pʀᴏᴄᴇssɪɴɢ...</b>"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
@@ -131,7 +130,7 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(
-                "Join Channel",
+                "❆ Jᴏɪɴ Mᴀɪɴ Cʜᴀɴɴᴇʟ ❆",
                 url = client.invitelink)
         ]
     ]
@@ -139,7 +138,7 @@ async def not_joined(client: Client, message: Message):
         buttons.append(
             [
                 InlineKeyboardButton(
-                    text = 'Try Again',
+                    text = '↻ Tʀʏ Aɢᴀɪɴ',
                     url = f"https://t.me/{client.username}?start={message.command[1]}"
                 )
             ]
@@ -171,11 +170,11 @@ async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
         broadcast_msg = message.reply_to_message
-        total = 0
-        successful = 0
-        blocked = 0
-        deleted = 0
-        unsuccessful = 0
+        Tᴏᴛᴀʟ = 0
+        Sᴜᴄᴄᴇssғᴜʟ = 0
+        Bʟᴏᴄᴋᴇᴅ = 0
+        Dᴇʟᴇᴛᴇᴅ = 0
+        Uɴsᴜᴄᴄᴇssғᴜʟ = 0
         
         pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>")
         for chat_id in query:
