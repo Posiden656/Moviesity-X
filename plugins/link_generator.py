@@ -56,5 +56,5 @@ async def link_generator(client: Client, message: Message):
 
     base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
     link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("⚡ Oᴘᴇɴ Lɪɴᴋ ⚡", url=f'{link}')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("✨ Oᴘᴇɴ Lɪɴᴋ ✨", url=f'{link}')]])
     await channel_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
