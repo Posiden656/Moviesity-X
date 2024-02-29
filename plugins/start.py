@@ -170,13 +170,13 @@ async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
         query = await full_userbase()
         broadcast_msg = message.reply_to_message
-        Tᴏᴛᴀʟ = 0
-        Sᴜᴄᴄᴇssғᴜʟ = 0
-        Bʟᴏᴄᴋᴇᴅ = 0
-        Dᴇʟᴇᴛᴇᴅ = 0
-        Uɴsᴜᴄᴄᴇssғᴜʟ = 0
+        🌟Tᴏᴛᴀʟ = 0
+        ✅Sᴜᴄᴄᴇssғᴜʟ = 0
+        👾Bʟᴏᴄᴋᴇᴅ = 0
+        💀Dᴇʟᴇᴛᴇᴅ = 0
+        ❌Uɴsᴜᴄᴄᴇssғᴜʟ = 0
         
-        pls_wait = await message.reply("<i>Broadcasting Message.. This will Take Some Time</i>")
+        pls_wait = await message.reply("<i>Bʀᴏᴀᴅᴄᴀsᴛɪɴɢ Mᴇssᴀɢᴇ... Tʜɪs Wɪʟʟ Tᴀᴋᴇ Sᴏᴍᴇ Tɪᴍᴇ</i>")
         for chat_id in query:
             try:
                 await broadcast_msg.copy(chat_id)
@@ -198,11 +198,11 @@ async def send_text(client: Bot, message: Message):
         
         status = f"""<b><u>Broadcast Completed</u>
 
-Total Users: <code>{total}</code>
-Successful: <code>{successful}</code>
-Blocked Users: <code>{blocked}</code>
-Deleted Accounts: <code>{deleted}</code>
-Unsuccessful: <code>{unsuccessful}</code></b>"""
+🌟Tᴏᴛᴀʟ Usᴇʀs: <code>{total}</code>
+✅Sᴜᴄᴄᴇssғᴜʟ: <code>{successful}</code>
+❌Uɴsᴜᴄᴄᴇssғᴜʟ: <code>{unsuccessful}</code></b>
+👾Bʟᴏᴄᴋᴇᴅ: <code>{blocked}</code>
+💀Dᴇʟᴇᴛᴇᴅ Aᴄᴄᴏᴜɴᴛs: <code>{deleted}</code>"""
         
         return await pls_wait.edit(status)
 
