@@ -54,6 +54,14 @@
       "value": "6731088611",
       "required": false
     },
+    "AUTO_DELETE_TIME": {
+      "description": "Auto Delete time in secounds",
+      "value": "300"
+    },
+    "AUTO_DELETE_MSG": {
+      "description": "Auto Delete Message",
+      "value": "<b>✍️ Nᴏᴛᴇ : Aʙᴏᴠᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Wɪᴛʜɪɴ 05 Mɪɴᴜᴛᴇs..\nPʟᴇᴀsᴇ Mᴀᴋᴇ Sᴜʀᴇ Tʜᴀᴛ Yᴏᴜ Fᴏʀᴡᴀʀᴅ ⏩ Tʜɪs Fɪʟᴇ Tᴏ Yᴏᴜʀ Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs ᴏʀ Fʀɪᴇɴᴅs.\n\n✍️ नोट : ऊपर दिया गया Fɪʟᴇ 5 मिनट बाद डिलीट हो जाएगा\nइसलिए कृपया इस Fɪʟᴇ को अपने किसी दोस्त को या Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs में Fᴏʀᴡᴀʀᴅ ⏩ कर ले ।</b>"
+    },
     "PROTECT_CONTENT": {
       "description": "Protect contents from getting forwarded",
       "value": "False",
