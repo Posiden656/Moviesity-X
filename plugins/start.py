@@ -11,11 +11,15 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 
 from bot import Bot
-from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT
+from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, AUTO_DELETE_TIME, AUTO_DELETE_MSG
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 
-
+async def delete_after_delay(message: Message, delay):
+    xmsg = await message.reply_text(AUTO_DELETE_MSG, disable_web_page_preview=True, quote=True)
+    await asyncio.sleep(AUTO_DELETE_TIME)
+    await message.delete()
+    await xmsg.edit("⦸ <i>This message was deleted</i>")
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -78,19 +82,12 @@ async def start_command(client: Client, message: Message):
             try:
                 xfile = await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
                 await asyncio.sleep(0.5)
-                xmsg = await xfile.reply_text(
-            f"<b>✍️ Nᴏᴛᴇ : Aʙᴏᴠᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Wɪᴛʜɪɴ 05 Mɪɴᴜᴛᴇs..</b>\nPʟᴇᴀsᴇ Mᴀᴋᴇ Sᴜʀᴇ Tʜᴀᴛ Yᴏᴜ Fᴏʀᴡᴀʀᴅ ⏩ Tʜɪs Fɪʟᴇ Tᴏ Yᴏᴜʀ Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs ᴏʀ Fʀɪᴇɴᴅs.\n\n<b>✍️ नोट : ऊपर दिया गया Fɪʟᴇ 5 मिनट बाद डिलीट हो जाएगा</b>\nइसलिए कृपया इस Fɪʟᴇ को अपने किसी दोस्त को या Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs में Fᴏʀᴡᴀʀᴅ ⏩ कर ले ।</b>",
-            disable_web_page_preview=True,
-            quote=True
-        )
-                await asyncio.sleep(300)
-                await xfile.delete()
-                await xmsg.edit("⦸ <i>This message was deleted</i>")
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
             except:
                 pass
+            asyncio.create_task(delete_after_delay(xfile, AUTO_DELETE_TIME))
         return
     else:
         reply_markup = InlineKeyboardMarkup(
