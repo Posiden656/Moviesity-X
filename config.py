@@ -29,7 +29,7 @@ PORT = os.environ.get("PORT", "8080")
 
 #Auto Delete
 AUTO_DELETE_TIME = int(os.environ.get("AUTO_DELETE_TIME", ""))
-AUTO_DELETE_MSG = os.environ.get("AUTO_DELETE_MSG", "")
+AUTO_DELETE_MSG = "<b>✍️ Nᴏᴛᴇ : Aʙᴏᴠᴇ Fɪʟᴇ Wɪʟʟ Bᴇ Dᴇʟᴇᴛᴇᴅ Wɪᴛʜɪɴ 05 Mɪɴᴜᴛᴇs..\nPʟᴇᴀsᴇ Mᴀᴋᴇ Sᴜʀᴇ Tʜᴀᴛ Yᴏᴜ Fᴏʀᴡᴀʀᴅ ⏩ Tʜɪs Fɪʟᴇ Tᴏ Yᴏᴜʀ Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs ᴏʀ Fʀɪᴇɴᴅs.\n\n✍️ नोट : ऊपर दिया गया Fɪʟᴇ 5 मिनट बाद डिलीट हो जाएगा\nइसलिए कृपया इस Fɪʟᴇ को अपने किसी दोस्त को या Sᴀᴠᴇᴅ Mᴇssᴀɢᴇs में Fᴏʀᴡᴀʀᴅ ⏩ कर ले ।</b>"
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "")
@@ -50,7 +50,7 @@ except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
 
 #Force sub message 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>Hᴇʟʟᴏ {first}\n\nYᴏᴜ Nᴇᴇᴅ Tᴏ Jᴏɪɴ Mʏ Cʜᴀɴɴᴇʟ Tᴏ Usᴇ Mᴇ\n\nKɪɴᴅʟʏ Pʟᴇᴀsᴇ Jᴏɪɴ Cʜᴀɴɴᴇʟ</b>")
+FORCE_MSG = "<b>Hᴇʟʟᴏ {first}\n\nYᴏᴜ Nᴇᴇᴅ Tᴏ Jᴏɪɴ Mʏ Cʜᴀɴɴᴇʟ Tᴏ Usᴇ Mᴇ\n\nKɪɴᴅʟʏ Pʟᴇᴀsᴇ Jᴏɪɴ Cʜᴀɴɴᴇʟ</b>"
 
 #set your Custom Caption here, Keep None for Disable Custom Caption
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
